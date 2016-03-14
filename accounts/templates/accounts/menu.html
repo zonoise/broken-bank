@@ -4,7 +4,12 @@
         
     </head>
     <body>
-        menu
-        {{account_id}}
+        <h1>menu</h1>
+        kouza bangou {{account_id}}<br>
+        zandaka {{user_total_money}}<br>
+        <form  action="{% url 'account-add' %}" method=POST>{% csrf_token %}
+        {{form}}
+        <input type="submit" value="ADD"/>
+        </form>
     </body>
 </html>

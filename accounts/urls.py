@@ -5,4 +5,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'login$', views.login, name='login'),
     url(r'menu$', views.menu, name='menu'),
+    url(r'add$', views.add, name='account-add'),
 ]
