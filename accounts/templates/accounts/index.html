@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        index
+    
+        <form action="login" method="POST">
+            {% csrf_token %}
+            <input type="text" name="account-id"/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
