@@ -5,6 +5,7 @@ from django.db import models
 # Create your models here.
 
 class UserTotal(models.Model):
+    account_id = models.TextField()
     value = models.IntegerField()
     created_at = models.DateTimeField()
 
