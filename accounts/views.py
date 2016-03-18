@@ -34,9 +34,18 @@ def menu(request):
     else:
         return HttpResponse("ascacs")
 
+from operations import add_money
 def add(request):
     f = AddMoneyForm(request.POST)
     if f.is_valid():
-        return HttpResponse("valid")
+        account_id = request.session.get('account_id')
+        value = f.cleaned_data['value']
+        
+        add_money(account_id,value)
+        return redirect('menu')
+        #return HttpResponse("valid")
     else:
         return HttpResponse("no valid")
+    
+    
+    
