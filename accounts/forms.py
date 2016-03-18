@@ -1,14 +1,16 @@
 from django import forms
 class AddMoneyForm(forms.Form):
     isolation_level = forms.ChoiceField(choices=(
-            ('A','A'),
-            ('B','B'),
-            ('C','C'),
+            ('READ_COMMITED','READ_COMMITED'),
+            ('READ_UNCOMMITTED','READ_UNCOMMITTED'),
+            ('SERIALIZABLE','SERIALIZABLE'),
+            ('REPEATABLE_READ','REPEATABLE_READ'),
         ))
     row_lock = forms.ChoiceField(
         choices=(
-            ('A','A'),
-            ('B','B'),
+            ('None','None'),
+            ('FOR_UPDATE','FOR_UPDATE'),
+            ('LOCK_IN_SHARE_MODE','LOCK_IN_SHARE_MODE'),
         ),
         widget=forms.Select)
     value = forms.IntegerField()
